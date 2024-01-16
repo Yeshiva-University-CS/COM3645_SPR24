@@ -1,0 +1,123 @@
+Roster of Presidents
+
+     FIRST NAME: John
+      LAST NAME: Kennedy
+YEARS IN OFFICE: 1961 1963
+
+     FIRST NAME: Lyndon
+      LAST NAME: Johnson
+YEARS IN OFFICE: 1963 1969
+
+     FIRST NAME: Richard
+      LAST NAME: Nixon
+YEARS IN OFFICE: 1969 1974
+
+     FIRST NAME: Gerald
+      LAST NAME: Ford
+YEARS IN OFFICE: 1974 1977
+
+     FIRST NAME: Jimmy
+      LAST NAME: Carter
+YEARS IN OFFICE: 1977 1981
+
+     FIRST NAME: Ronald
+      LAST NAME: Reagan
+YEARS IN OFFICE: 1981 1989
+
+     FIRST NAME: George
+       INITIALS: H.W.
+      LAST NAME: Bush
+YEARS IN OFFICE: 1989 1993
+
+     FIRST NAME: Bill
+      LAST NAME: Clinton
+YEARS IN OFFICE: 1993 2001
+
+     FIRST NAME: George
+       INITIALS: W.
+      LAST NAME: Bush
+YEARS IN OFFICE: 2001 2009
+
+     FIRST NAME: Barack
+      LAST NAME: Obama
+YEARS IN OFFICE: 2009 2017
+
+     FIRST NAME: Donald
+      LAST NAME: Trump
+YEARS IN OFFICE: 2017 2021
+
+     FIRST NAME: Joe
+      LAST NAME: Biden
+YEARS IN OFFICE: 2021 2023
+
+------------------------------
+
+In office during the year 1975
+
+     FIRST NAME: Gerald
+      LAST NAME: Ford
+YEARS IN OFFICE: 1974 1977
+
+------------------------------
+
+In office during the year 1963
+
+     FIRST NAME: John
+      LAST NAME: Kennedy
+YEARS IN OFFICE: 1961 1963
+
+     FIRST NAME: Lyndon
+      LAST NAME: Johnson
+YEARS IN OFFICE: 1963 1969
+
+------------------------------
+
+In office during the year 1989
+
+     FIRST NAME: Ronald
+      LAST NAME: Reagan
+YEARS IN OFFICE: 1981 1989
+
+     FIRST NAME: George
+       INITIALS: H.W.
+      LAST NAME: Bush
+YEARS IN OFFICE: 1989 1993
+
+------------------------------
+
+In office during the year 2019
+
+     FIRST NAME: Donald
+      LAST NAME: Trump
+YEARS IN OFFICE: 2017 2021
+
+------------------------------
+
+In office during the year 2001
+
+     FIRST NAME: Bill
+      LAST NAME: Clinton
+YEARS IN OFFICE: 1993 2001
+
+     FIRST NAME: George
+       INITIALS: W.
+      LAST NAME: Bush
+YEARS IN OFFICE: 2001 2009
+
+------------------------------
+
+In office during the year 2016
+
+     FIRST NAME: Barack
+      LAST NAME: Obama
+YEARS IN OFFICE: 2009 2017
+
+------------------------------
+
+In office during the year 2020
+
+     FIRST NAME: Donald
+      LAST NAME: Trump
+YEARS IN OFFICE: 2017 2021
+
+Done!

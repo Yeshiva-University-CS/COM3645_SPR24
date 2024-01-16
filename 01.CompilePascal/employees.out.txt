@@ -1,0 +1,45 @@
+        Id: 1234
+  Job code: P
+ Last name: Jones
+First name: Mary
+Profession: scientist
+
+        Id: 2912
+  Job code: B
+ Last name: Adams
+First name: Wendy
+Profession: scientist
+
+        Id: 3052
+  Job code: X
+ Last name: Smith
+First name: Tom
+Profession: unknown
+
+        Id: 4040
+  Job code: H
+ Last name: Schlesinger
+First name: Frank
+Profession: teacher
+
+        Id: 5886
+  Job code: Y
+ Last name: Lowe
+First name: Marie-Antoinette
+Profession: unknown
+
+        Id: 6273
+  Job code: C
+ Last name: Thomas
+First name: Leslie
+Profession: scientist
+
+        Id: 7023
+  Job code: E
+ Last name: von Braun
+First name: William
+Profession: teacher
+
+7 employees read.
+
+I am done.
