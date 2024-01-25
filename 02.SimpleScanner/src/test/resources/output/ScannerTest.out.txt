@@ -68,4 +68,4 @@ TOKEN ERROR at line 32: Invalid number at '3.14.15926'
 TOKEN ERROR at line 33: Invalid token at '?'
          ERROR : ?
 TOKEN ERROR at line 34: String not closed at ''String 'not' closed'
-        STRING : 'String 'not' closed
+         ERROR : 'String 'not' closed
