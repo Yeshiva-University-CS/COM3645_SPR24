@@ -1,0 +1,34 @@
+There were 0 syntax errors.
+Parse tree:
+<PROGRAM HelloWorld>
+    <COMPOUND line 3>
+        <ASSIGN line 4>
+            <VARIABLE i />
+            <INTEGER_CONSTANT 0 />
+        </ASSIGN>
+        <LOOP line 6>
+            <ASSIGN line 7>
+                <VARIABLE i />
+                <ADD>
+                    <VARIABLE i />
+                    <INTEGER_CONSTANT 1 />
+                </ADD>
+            </ASSIGN>
+            <WRITE line 8>
+                <STRING_CONSTANT '#' />
+            </WRITE>
+            <WRITE line 8>
+                <VARIABLE i />
+            </WRITE>
+            <WRITELN line 9>
+                <STRING_CONSTANT ': Hello, world!' />
+            </WRITELN>
+            <TEST line 10>
+                <EQ>
+                    <VARIABLE i />
+                    <INTEGER_CONSTANT 5 />
+                </EQ>
+            </TEST>
+        </LOOP>
+    </COMPOUND>
+</PROGRAM>
