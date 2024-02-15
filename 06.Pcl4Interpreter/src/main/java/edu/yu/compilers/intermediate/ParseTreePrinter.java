@@ -9,7 +9,7 @@ public class ParseTreePrinter extends AbstractParseTreeVisitor<Void> {
 
     private void printIndent() {
         for (int i = 0; i < depth; i++) {
-            System.out.print("    ");
+            System.out.print("  ");
         }
     }
 

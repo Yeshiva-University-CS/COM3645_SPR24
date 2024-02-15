@@ -50,11 +50,7 @@ class Pcl44Test {
         final String utf8 = StandardCharsets.UTF_8.name();
         try (PrintStream ps = new PrintStream(baos, true, utf8)) {
             System.setOut(ps);
-            CharStream chars = getResourceFileCharStream(inputFileName);
-            var lexer = new Pcl4Lexer(chars);
-            var tokens = new CommonTokenStream(lexer);
-            var parser = new Pcl4Parser(tokens);
-            var tree = parser.program();
+            var tree = Pcl4.parseProgram(getResourceFile(inputFileName).getAbsolutePath());
             Pcl4.executeProgram(tree);
             System.setOut(System.out);
         }
@@ -104,10 +100,4 @@ class Pcl44Test {
         assertTrue(file.exists());
         return file;
     }
-
-    private CharStream getResourceFileCharStream(String fileName) throws IOException{
-        File inputFile = getResourceFile(fileName);
-        return CharStreams.fromStream(new FileInputStream(inputFile));
-    }
-
 }
