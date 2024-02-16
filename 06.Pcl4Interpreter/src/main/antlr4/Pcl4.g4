@@ -5,8 +5,7 @@ package antlr4;
 }
 
 program           : programHeader block '.' ;
-programHeader     : PROGRAM IDENTIFIER programParameters? ';' ;
-programParameters : '(' IDENTIFIER ( ',' IDENTIFIER )* ')' ;
+programHeader     : PROGRAM IDENTIFIER ';' ; 
 
 block         : declarations compoundStatement ;
 declarations  : ;
