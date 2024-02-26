@@ -1,0 +1,7 @@
+
+===== SEMANTIC ERRORS =====
+
+Line Message                                  Found near
+---- -------                                  ----------
+015  Mismatched datatype                      "-8.0"
+016  Duplicate CASE constant                  "1"

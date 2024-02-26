@@ -1,0 +1,11 @@
+
+===== SEMANTIC ERRORS =====
+
+Line Message                                  Found near
+---- -------                                  ----------
+004  Redeclared identifier                    "sun"
+005  Invalid constant                         "1.4"
+005  Invalid constant                         "mon"
+006  Invalid constant                         "'a'"
+009  Redeclared identifier                    "i,j,k,i:integer"
+019  Mismatched datatype                      "'c'"

@@ -1,0 +1,7 @@
+
+===== SEMANTIC ERRORS =====
+
+Line Message                                  Found near
+---- -------                                  ----------
+016  Datatype must be boolean                 "'incorrect'"
+021  Undeclared identifier                    "q"

@@ -1,0 +1,7 @@
+
+===== SEMANTIC ERRORS =====
+
+Line Message                                  Found near
+---- -------                                  ----------
+013  Datatype must be boolean                 "i+j"
+025  Incompatible assignment                  "'8'"
