@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "java",
+        "name": "Current File (Debug)",
+        "request": "launch",
+        "mainClass": "${file}",
+        "args": ["-compile", ".\\target\\test-classes\\input\\HelloWorld.pas"]
+      },
+      {
+        "type": "java",
+        "name": "PascalCC (Debug)",
+        "request": "launch",
+        "mainClass": "edu.yu.compilers.PascalCC",
+        "projectName": "PascalCC",
+        "args": ["-compile", ".\\target\\test-classes\\input\\HelloWorld.pas"]
+      }
+    ]
+  }
+  

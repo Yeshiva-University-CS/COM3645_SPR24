@@ -1,0 +1,9 @@
+main:         i = 5, j = 7, x = 3.00, y = 2.00, p = false
+alpha parms:  m = 6, n = 2, r = 3.40, k = 17, o = 7, w = 3.00, z = 3.40, q = true
+alpha locals: a = 1.00, b = 2.00, c = 0.50, i = 3
+main:         i = 17, j = 7, x = 3.00, y = 3.40, p = true
+beta locals:  Hello, world! 66.00
+main:         i = 17, j = 7, x = 3.00, y = 3.40, p = true
+gamma parms:  i = 24, n = 7, x = 5.67, r = 119.00
+gamma locals: a = 24.00, b = 215.33, c = 17.00
+main:         i = 24, j = 7, x = 3.00, y = 3.40, p = true
