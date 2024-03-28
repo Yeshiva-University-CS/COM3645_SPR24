@@ -11,7 +11,7 @@ program
     ;
 
 programHeader 
-    : 'Javana' identifer ':'
+    : 'Javana' identifier ':'
     ;
 
 mainMethod 
@@ -19,7 +19,7 @@ mainMethod
     ;
 
 mainArg 
-    : identifer ':' stringArrType 
+    : identifier ':' stringArrType 
     ;
 
 globalDefinitions 
@@ -34,7 +34,7 @@ funcDefinition
     ;
 
 funcPrototype  
-    : 'func' identifer '(' funcArgList? ')' '->' returnType 
+    : 'func' identifier '(' funcArgList? ')' '->' returnType 
     ;
 
 funcArgList    
@@ -53,7 +53,7 @@ returnType
 // Name Definitions and Declarations -------
 
 recordDecl
-    : 'record' identifer '{' (typeAssoc)* '}'
+    : 'record' identifier '{' (typeAssoc)* '}'
     ;
 
 variableDecl 
@@ -73,7 +73,7 @@ constantDef
     ;
 
 nameList 
-    : identifer (',' identifer)* 
+    : identifier (',' identifier)* 
     ;
     
 
@@ -109,12 +109,12 @@ nameDeclDefStatement
     ;
     
 assignmentStatement        
-    : identifer identModifier? '=' expression 
+    : identifier identModifier? '=' expression 
     ;
 
 identModifier
     : arrIdxSpecifier
-    | '.' identifer
+    | '.' identifier
     ;
 
 arrIdxSpecifier
@@ -159,7 +159,7 @@ printArgument
 expression 
     : expression arrIdxSpecifier            
     | expression '.' 'length'
-    | expression '.' identifer                   
+    | expression '.' identifier                   
     | expression HIGHER_ARITH_OP expression   
     | expression ARITH_OP expression          
     | expression REL_OP expression            
@@ -171,7 +171,7 @@ expression
     | readCharCall
     | readLineCall
     | functionCall
-    | identifer                                
+    | identifier                                
     | literal                                    
     | newArray                                   
     | newRecord                                  
@@ -190,19 +190,19 @@ readLineCall
     ;
 
 functionCall 
-    : identifer '(' exprList? ')' 
+    : identifier '(' exprList? ')' 
     ;
 
 newArray 
-    : '@' (scalarType | identifer) arrIdxSpecifier 
+    : '@' (scalarType | identifier) arrIdxSpecifier 
     ;
 
 newRecord
-    : '@' identifer '{' varInitList? '}'
+    : '@' identifier '{' varInitList? '}'
     ;
 
 varInitList
-    : identifer '=' expression (',' identifer '=' expression)*
+    : identifier '=' expression (',' identifier '=' expression)*
     ;
 
 literal 
@@ -236,7 +236,7 @@ compositeType
 integerType : INT_TYPE ;
 booleanType : BOOL_TYPE ;
 stringType  : STR_TYPE ;
-recordType  : identifer ;
+recordType  : identifier ;
 
 integerArrType : INT_ARR_TYPE ;
 booleanArrType : BOOL_ARR_TYPE ;
@@ -245,7 +245,7 @@ recordArrType  : REC_ARR_TYPE ;
 
 // Misc Rules
 
-identifer
+identifier
     : IDENT
     ;
 
