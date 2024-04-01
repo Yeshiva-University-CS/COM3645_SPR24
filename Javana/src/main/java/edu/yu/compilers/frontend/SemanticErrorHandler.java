@@ -12,7 +12,7 @@ public class SemanticErrorHandler
         INVALID_TYPE               ("Invalid type"),
         TYPE_MISMATCH              ("Mismatched datatype"),
         TYPE_MUST_BE_INTEGER       ("Datatype must be integer"),
-        TYPE_MUST_BE_STRING        ("Datatype must be integer or real"),
+        TYPE_MUST_BE_STRING        ("Datatype must be string"),
         TYPE_MUST_BE_BOOLEAN       ("Datatype must be boolean"),
         INCOMPATIBLE_ASSIGNMENT    ("Incompatible assignment"),
         INCOMPATIBLE_COMPARISON    ("Incompatible comparison"),
