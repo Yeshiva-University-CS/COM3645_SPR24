@@ -266,11 +266,11 @@ REL_OP          : '<' | '>' | '<=' | '>=' ;
 EQ_OP           : '==' | '!=' ;
 COND_OP         : '&&' | '||' ;
 
+BOOL : 'true' | 'false' ;
+NULL_VALUE : 'None';
 IDENT  : [a-zA-Z_] [a-zA-Z_0-9]* ;
 STRING : '"' ( '\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '"' | '\\' ) | ~('\\' | '"') )* '"' ;
 INTEGER : '-'? [0-9]+ ;
-BOOL : 'true' | 'false' ;
-NULL_VALUE : 'None';
 
 NEWLINE : '\r'? '\n' -> skip ;
 WS : [ \t]+ -> skip ;
