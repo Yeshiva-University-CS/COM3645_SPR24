@@ -47,7 +47,7 @@ funcArgument
 
 returnType
     : type
-    | 'None'
+    | NULL_VALUE
     ;
 
 // Name Definitions and Declarations -------
