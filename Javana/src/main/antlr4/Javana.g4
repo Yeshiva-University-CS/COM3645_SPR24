@@ -7,19 +7,19 @@ package antlr4;
 // Program and routines --------------------
 
 program 
-    : programHeader globalDefinitions* mainMethod globalDefinitions* 
+    : hdr=programHeader defs+=globalDefinitions* main=mainMethod defs+=globalDefinitions* 
     ;
 
 programHeader 
-    : 'Javana' identifier ':'
+    : 'Javana' name=identifier ':'
     ;
 
 mainMethod 
-    : '@main' '(' mainArg? ')' blockStatement 
+    : '@main' '(' args=mainArg? ')' body=blockStatement 
     ;
 
 mainArg 
-    : identifier ':' stringArrType 
+    : name=identifier ':' stringArrType 
     ;
 
 globalDefinitions 
@@ -30,15 +30,15 @@ globalDefinitions
 // Function Definitions and Declarations ---
 
 funcDefinition 
-    : funcPrototype blockStatement 
+    : proto=funcPrototype body=blockStatement 
     ;
 
 funcPrototype  
-    : 'func' identifier '(' funcArgList? ')' '->' returnType 
+    : 'func' name=identifier '(' argList+=funcArgList? ')' '->' return=returnType 
     ;
 
 funcArgList    
-    : funcArgument (',' funcArgument)* 
+    : args+=funcArgument (',' args+=funcArgument)* 
     ;
 
 funcArgument   
@@ -47,33 +47,33 @@ funcArgument
 
 returnType
     : type
-    | NULL_VALUE
+    | None
     ;
 
 // Name Definitions and Declarations -------
 
 recordDecl
-    : 'record' identifier '{' (typeAssoc)* '}'
+    : 'record' name=identifier '{' fields+=typeAssoc* '}'
     ;
 
 variableDecl 
-    : 'decl' typeAssoc 
+    : 'decl' assoc=typeAssoc 
     ;
 
 typeAssoc
-    : nameList ':' type
+    : namelst=nameList ':' t=type
     ;
 
 variableDef  
-    : 'var' nameList '=' expression 
+    : 'var' namelst=nameList '=' expr=expression 
     ;
 
 constantDef  
-    : 'const' nameList '=' expression 
+    : 'const' namelst=nameList '=' expr=expression 
     ;
 
 nameList 
-    : identifier (',' identifier)* 
+    : names+=identifier (',' names+=identifier)* 
     ;
     
 
@@ -94,7 +94,7 @@ statement
     ;
 
 blockStatement 
-    : '{' (statement)* '}' 
+    : '{' stmts+=statement* '}' 
     ;
 
 nameDeclStatement
@@ -108,50 +108,54 @@ nameDeclDefStatement
     | funcDefinition
     ;
     
-assignmentStatement        
-    : identifier identModifier? '=' expression 
+assignmentStatement       
+    : var=variable '=' expr=expression 
     ;
 
-identModifier
-    : arrIdxSpecifier
-    | '.' identifier
+variable
+    : name=identifier modifiers+=varModifier*
+    ;
+
+varModifier
+    : arrIdxSpecifier   # varArrayIndexModfier
+    | '.' identifier    # varRecordFieldModifier
     ;
 
 arrIdxSpecifier
-    : '[' expression ']'
+    : '[' expr=expression ']'
     ;
 
 ifStatement 
-    : 'if' '(' expression ')' blockStatement ('else' blockStatement)? 
+    : 'if' '(' condition=expression ')' thenStmt=blockStatement ('else' elseStmt=blockStatement)? 
     ;
 
 forStatement 
-    : 'for' '(' variableDef? ';' expression ';' expression ')' blockStatement 
+    : 'for' '(' init=variableDef? ';' condition=expression ';' updateExpr=expression ')' body=blockStatement 
     ;
 
 whileStatement 
-    : 'while' '(' expression ')' blockStatement 
+    : 'while' '(' condition=expression ')' body=blockStatement 
     ;
 
 expressionStatement 
-    : expression 
+    : expr=expression 
     ;
 
 returnStatement 
-    : 'return' expression? 
+    : 'return' expr=expression 
     ;
 
 printStatement
-    : 'print' printArgument 
+    : 'print' arg=printArgument 
     ;
 
 printLineStatement
-    : 'println' printArgument?
+    : 'println' arg=printArgument?
     ;
 
 printArgument
-    : expression
-    | '(' exprList ')'
+    : expression        # PrintSingleValue
+    | '(' exprList ')'  # FormattedPrint
     ;
 
 // Expressions -----------------------------
@@ -160,25 +164,24 @@ expression
     : expression arrIdxSpecifier            
     | expression '.' 'length'
     | expression '.' identifier                   
-    | expression HIGHER_ARITH_OP expression   
-    | expression ARITH_OP expression          
-    | expression REL_OP expression            
-    | expression EQ_OP expression             
+    | lhs=expression op=HIGHER_ARITH_OP rhs=expression      
+    | lhs=expression op=ARITH_OP rhs=expression            
+    | lhs=expression op=REL_OP rhs=expression                    
+    | lhs=expression EQ_OP expression             
     | expression COND_OP expression           
-    | '!' expression                          
-    | '-' expression                          
+    | '!' expression                                              
     | '(' expression ')'                         
     | readCharCall
     | readLineCall
     | functionCall
-    | identifier                                
+    | variable                                
     | literal                                    
     | newArray                                   
     | newRecord                                  
     ;
 
 exprList
-    : expression (',' expression)*
+    : exprs+=expression (',' exprs+=expression)*
     ;
 
 readCharCall
@@ -190,7 +193,7 @@ readLineCall
     ;
 
 functionCall 
-    : identifier '(' exprList? ')' 
+    : name=identifier '(' args=exprList? ')' 
     ;
 
 newArray 
@@ -198,25 +201,29 @@ newArray
     ;
 
 newRecord
-    : '@' identifier '{' varInitList? '}'
+    : '@' identifier '{' init=fieldInitList? '}'
     ;
 
-varInitList
-    : identifier '=' expression (',' identifier '=' expression)*
+fieldInitList
+    : init+=fieldInit (',' init+=fieldInit)*
+    ;
+
+fieldInit
+    : field=identifier '=' expr=expression
     ;
 
 literal 
-    : INTEGER
-    | BOOL        
-    | STRING      
-    | NULL_VALUE  
+    : INTEGER   # IntegerLiteral
+    | BOOL      # BooleanLiteral
+    | STRING    # StringLiteral
+    | None      # NoneValue
     ;
 
 // Types -----------------------------------
 
 type 
-    : scalarType    
-    | compositeType 
+    : scalarType    # TypeScalar
+    | compositeType # TypeComposite
     ;
 
 scalarType 
@@ -247,6 +254,10 @@ recordArrType  : REC_ARR_TYPE ;
 
 identifier
     : IDENT
+    ;
+
+None
+    : NULL_VALUE
     ;
 
 // Lexer tokens
