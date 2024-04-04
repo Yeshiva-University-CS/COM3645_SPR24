@@ -1,0 +1,4 @@
+Javana SampleProgram:
+
+@main (args: string[]) {
+}
