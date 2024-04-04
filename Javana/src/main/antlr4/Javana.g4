@@ -168,7 +168,7 @@ expression
     | lhs=expression op=ARITH_OP rhs=expression         # ExprArith
     | lhs=expression op=REL_OP rhs=expression           # ExprRelational
     | lhs=expression op=EQ_OP rhs=expression            # ExprEquality      
-    | lsh=expression op=COND_OP rhs=expression          # ExprConditional
+    | lhs=expression op=COND_OP rhs=expression          # ExprConditional
     | '!' expression                                    # ExprNot                                    
     | '(' expression ')'                                # ExprGroup
     | readCharCall                                      # ExprReadChar
