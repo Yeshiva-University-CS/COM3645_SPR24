@@ -142,7 +142,7 @@ expressionStatement
     ;
 
 returnStatement 
-    : 'return' expr=expression 
+    : 'return' expr=expression? 
     ;
 
 printStatement
@@ -161,23 +161,23 @@ printArgument
 // Expressions -----------------------------
 
 expression 
-    : expression arrIdxSpecifier            
-    | expression '.' 'length'
-    | expression '.' identifier                   
-    | lhs=expression op=HIGHER_ARITH_OP rhs=expression      
-    | lhs=expression op=ARITH_OP rhs=expression            
-    | lhs=expression op=REL_OP rhs=expression                    
-    | lhs=expression EQ_OP expression             
-    | expression COND_OP expression           
-    | '!' expression                                              
-    | '(' expression ')'                         
-    | readCharCall
-    | readLineCall
-    | functionCall
-    | variable                                
-    | literal                                    
-    | newArray                                   
-    | newRecord                                  
+    : expression arrIdxSpecifier                        # ExprArrayElement       
+    | expression '.' 'length'                           # ExprArrayLength
+    | expression '.' identifier                         # ExprRecordField               
+    | lhs=expression op=HIGHER_ARITH_OP rhs=expression  # ExprHigherArith     
+    | lhs=expression op=ARITH_OP rhs=expression         # ExprArith
+    | lhs=expression op=REL_OP rhs=expression           # ExprRelational
+    | lhs=expression op=EQ_OP rhs=expression            # ExprEquality      
+    | lsh=expression op=COND_OP rhs=expression          # ExprConditional
+    | '!' expression                                    # ExprNot                                    
+    | '(' expression ')'                                # ExprGroup
+    | readCharCall                                      # ExprReadChar
+    | readLineCall                                      # ExprReadLine
+    | functionCall                                      # ExprFunctionCall
+    | variable                                          # ExprVariable                 
+    | literal                                           # ExprLiteral                          
+    | newArray                                          # ExprNewArray                  
+    | newRecord                                         # ExprNewRecord                             
     ;
 
 exprList
