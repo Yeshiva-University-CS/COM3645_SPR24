@@ -161,9 +161,9 @@ printArgument
 // Expressions -----------------------------
 
 expression 
-    : expression arrIdxSpecifier                        # ExprArrayElement       
-    | expression '.' 'length'                           # ExprArrayLength
-    | expression '.' identifier                         # ExprRecordField               
+    : expr=expression arrIdx=arrIdxSpecifier            # ExprArrayElement       
+    | expr=expression '.' 'length'                      # ExprArrayLength
+    | expr=expression '.' name=identifier               # ExprRecordField               
     | lhs=expression op=HIGHER_ARITH_OP rhs=expression  # ExprHigherArith     
     | lhs=expression op=ARITH_OP rhs=expression         # ExprArith
     | lhs=expression op=REL_OP rhs=expression           # ExprRelational
