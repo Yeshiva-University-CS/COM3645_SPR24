@@ -14,6 +14,7 @@ public class SemanticErrorHandler
         TYPE_MUST_BE_INTEGER       ("Datatype must be integer"),
         TYPE_MUST_BE_STRING        ("Datatype must be string"),
         TYPE_MUST_BE_BOOLEAN       ("Datatype must be boolean"),
+        TYPE_MUST_BE_ARRAY         ("Datatype must be array"),
         INCOMPATIBLE_ASSIGNMENT    ("Incompatible assignment"),
         INCOMPATIBLE_COMPARISON    ("Incompatible comparison"),
         NAME_MUST_BE_FUNCTION      ("Must be a function name"),

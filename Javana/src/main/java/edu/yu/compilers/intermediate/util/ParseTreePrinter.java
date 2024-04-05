@@ -74,8 +74,10 @@ public class ParseTreePrinter {
         } else {
             // It's a leaf node (token), we'll return its text directly.
             var tokenTypeName = vocabulary.getSymbolicName(((Token) node.getPayload()).getType());
-            jsonNode.put("token", node.getText());
-            jsonNode.put("type", tokenTypeName);
+            if (tokenTypeName != null) {
+                jsonNode.put("token", node.getText());
+                jsonNode.put("type", tokenTypeName);
+            }
         }
 
         return jsonNode;
