@@ -1,6 +1,0 @@
-Javana SampleProgram:
-
-var a = 1 + "hi"
-
-@main (args: string[]) {
-}

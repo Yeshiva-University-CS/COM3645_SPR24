@@ -1,0 +1,9 @@
+Javana SampleProgram:
+
+@main () {
+    a = 1
+    add()
+    a[1]
+    a.length
+    a.field
+}
